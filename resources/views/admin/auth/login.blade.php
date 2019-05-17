@@ -57,16 +57,6 @@
                                 <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>
-<hr>
-                                @component('admin.components.test')
-                                  @slot('kamal')
-                                         Forbidden kamal
-                                  @endslot
-
-
-
-                                  You are not allowed to access this resource!
-                                @endcomponent
 
                                 @foreach([1,2,3,4,5] as $item)
 

@@ -24,7 +24,7 @@ Route::prefix('admin')->group(function () {
     Route::get('dashboard', 'AdminController@index')->name('admin.dashboard');
     Route::get('register', 'AdminController@create')->name('admin.register');
     Route::post('register', 'AdminController@store')->name('admin.register.store');
-    Route::get('login', 'Auth\Admin\LoginController@login')->name('admin.auth.login');
-    Route::post('login', 'Auth\Admin\LoginController@loginAdmin')->name('admin.auth.loginAdmin');
-    Route::post('logout', 'Auth\Admin\LoginController@logout')->name('admin.auth.logout');
+    Route::get('login', 'Auth\AdminLoginController@login')->name('admin.auth.login');
+    Route::post('login', 'Auth\AdminLoginController@loginAdmin')->name('admin.auth.loginAdmin');
+    Route::post('logout', 'Auth\AdminLoginController@logout')->name('admin.auth.logout');
 });
