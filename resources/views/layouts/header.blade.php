@@ -33,15 +33,15 @@
 			<div class="row">
 				<div class="col-md-4 clearfix">
 					<div class="logo pull-left">
-						<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+						<a href="index.html"><img src="{{ url('/') }}/images/home/logo.png" alt="" /></a>
 					</div>
 				</div>
 				<div class="col-md-8 clearfix">
 					<div class="shop-menu clearfix pull-right">
 						<ul class="nav navbar-nav">
 							<li><a href=""><i class="fa fa-user"></i> Account</a></li>
-							<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-							<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+							<li><a href="{{ url('checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+							<li><a href="{{ url('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 							<li><a href="{{ url('login') }}"><i class="fa fa-lock"></i> Login</a></li>
 							<li><a href="{{ url('register') }}"><i class="fa fa-lock"></i> Register</a></li>
 						</ul>

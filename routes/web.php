@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/products', 'ProductsController@index')->name('products');
+Route::get('/cart', 'CartController@index')->name('cart');
+Route::get('/checkout', 'CartController@checkout')->name('checkout');
 
 Route::prefix('admin')->group(function () {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
