@@ -11,10 +11,11 @@
                     <h2>New User Signup!</h2>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        <input type="text" placeholder="First name" name="first_name"/>
-                        <input type="text" placeholder="Last name" name="last_name"/>
-                        <input type="email" placeholder="Email Address" name="email"/>
-                        <input type="password" placeholder="Password" name="password"/>
+                        <input type="text" placeholder="First name" name="first_name" required/>
+                        <input type="text" placeholder="Last name" name="last_name" required/>
+                        <input type="email" placeholder="Email Address" name="email" required/>
+                        <input type="password" placeholder="Password" name="password" required/>
+                        <input type="password" placeholder="Confirm password" name="password_confirmation" required/>
                         <button type="submit" class="btn btn-default">Signup</button>
                     </form>
                 </div><!--/sign up form-->

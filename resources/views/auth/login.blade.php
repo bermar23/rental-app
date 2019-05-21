@@ -11,11 +11,11 @@
                     <h2>Login to your account</h2>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <input type="email" placeholder="Email" name="email" />
+                        <input type="email" placeholder="Email" name="email" required/>
                         @error('name')
                         <p class="text-danger">{{ $message }}</p>
                         @enderror
-                        <input type="password" placeholder="Password" name="password"/>
+                        <input type="password" placeholder="Password" name="password" required/>
                         
                         @error('password')
                         <p class="text-danger">{{ $message }}</p>
