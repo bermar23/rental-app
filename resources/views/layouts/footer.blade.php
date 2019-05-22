@@ -44,8 +44,8 @@
 					<div class="single-widget">
 						<h2>Policies</h2>
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="#">Terms of Use</a></li>
-							<li><a href="#">Privecy Policy</a></li>
+							<li><a href="{{ url('terms-conditions') }}">Terms of Use</a></li>
+							<li><a href="{{ url('privacy-policy') }}">Privacy Policy</a></li>
 						</ul>
 					</div>
 				</div>
