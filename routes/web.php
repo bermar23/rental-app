@@ -20,6 +20,7 @@ Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/checkout', 'CartController@checkout')->name('checkout');
 Route::get('/terms-conditions', 'TermsController@index')->name('terms-conditions');
 Route::get('/privacy-policy', 'PrivacyController@index')->name('privacy-policy');
+Route::get('/contacts-us', 'ContactController@index')->name('contacts-us');
 
 Route::prefix('admin')->group(function () {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');

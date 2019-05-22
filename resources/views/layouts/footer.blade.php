@@ -27,8 +27,8 @@
 					<div class="single-widget">
 						<h2>Service</h2>
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="#">Contact Us</a></li>
-							<li><a href="#">Order Status</a></li>
+							<li><a href="{{ url('contacts-us') }}">Contact Us</a></li>
+							<li><a href="{{ url('orders') }}">Order Status</a></li>
 						</ul>
 					</div>
 				</div>

@@ -67,7 +67,7 @@
 						<ul class="nav navbar-nav collapse navbar-collapse">
 							<li><a href="{{ url('/') }}/home" class="active">Home</a></li>
 							<li><a href="{{ url('/') }}/products">Products</a></li>
-							<li><a href="{{ url('/') }}/contacts">Contact</a></li>
+							<li><a href="{{ url('/') }}/contacts-us">Contact</a></li>
 						</ul>
 					</div>
 				</div>
