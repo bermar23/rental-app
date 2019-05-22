@@ -33,7 +33,7 @@
 			<div class="row">
 				<div class="col-md-4 clearfix">
 					<div class="logo pull-left">
-						<a href="index.html"><img src="{{ url('/') }}/images/home/logo.png" alt="" /></a>
+						<a href="{{ url('home') }}"><img src="{{ url('/') }}/images/logo.png" alt="" /></a>
 					</div>
 				</div>
 				<div class="col-md-8 clearfix">
