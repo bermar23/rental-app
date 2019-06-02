@@ -14,7 +14,8 @@ class CreateProductCategoriesTable extends Migration
     public function up()
     {
         Schema::create('product_categories', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->foreign('category_id')->references('category_id')->on('categories');
+            $table->foreign('item_id')->references('item_id')->on('items');
             $table->timestamps();
         });
     }

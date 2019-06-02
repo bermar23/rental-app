@@ -14,7 +14,15 @@ class CreateItemsTable extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('item_id');
+            $table->string('item_code')->unique();
+            $table->string('item_name');
+            $table->string('status');
+            $table->new ('brand');
+            $table->text('description');
+            $table->text('terms_and_conditions');
+            $table->text('html_description');
+            $table->foreign('user_id')->references('user_id')->on('users');
             $table->timestamps();
         });
     }
