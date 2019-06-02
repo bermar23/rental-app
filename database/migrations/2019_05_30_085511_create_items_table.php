@@ -18,10 +18,11 @@ class CreateItemsTable extends Migration
             $table->string('item_code')->unique();
             $table->string('item_name');
             $table->string('status');
-            $table->new ('brand');
+            $table->string('brand');
             $table->text('description');
             $table->text('terms_and_conditions');
             $table->text('html_description');
+            $table->decimal('amount', 8, 2);
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->timestamps();
         });

@@ -18,4 +18,9 @@ class Category extends Model
     ];
 
     protected $primaryKey = "category_id";
+
+    public function items()
+    {
+        return $this->belongsToMany(Item::class);
+    }
 }
