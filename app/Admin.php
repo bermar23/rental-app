@@ -41,7 +41,7 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'email_verified_at' => 'datetime:Y-m-d',
     ];
 
     protected $primaryKey = "user_id";

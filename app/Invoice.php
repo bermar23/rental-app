@@ -27,7 +27,7 @@ class Invoice extends Model
      * @var array
      */
     protected $casts = [
-        'invoice_date' => 'datetime',
+        'invoice_date' => 'datetime:Y-m-d',
     ];
 
     protected $primaryKey = "invoice_id";

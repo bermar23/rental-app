@@ -42,9 +42,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
-        'accepted_terms_at' => 'datetime',
-        'accepted_privacy_at' => 'datetime',
+        'email_verified_at' => 'datetime:Y-m-d',
+        'accepted_terms_at' => 'datetime:Y-m-d',
+        'accepted_privacy_at' => 'datetime:Y-m-d',
     ];
 
     protected $primaryKey = "user_id";

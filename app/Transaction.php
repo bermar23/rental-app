@@ -38,9 +38,9 @@ class Transaction extends Model
      * @var array
      */
     protected $casts = [
-        'date_returned'=>'datetime:Y-m-d H:i:s',
-        'transaction_date'=>'datetime:Y-m-d H:i:s',
-        'shipped_date'=>'datetime:Y-m-d H:i:s',
+        'date_returned'=>'datetime:Y-m-d',
+        'transaction_date'=>'datetime:Y-m-d',
+        'shipped_date'=>'datetime:Y-m-d',
     ];
 
     protected $primaryKey = "transaction_id";
