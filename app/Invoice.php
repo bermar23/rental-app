@@ -14,6 +14,8 @@ class Invoice extends Model
      * @var array
      */
     protected $fillable = [
+        'user_id', 
+        'transaction_id', 
         'invoice_date', 
         'invoice_status', 
         'invoice_number', 
@@ -36,5 +38,10 @@ class Invoice extends Model
     public function invoiceItems()
     {
         return $this->hasMany('App\InvoiceItem');
+    }
+    
+    public function user()
+    {
+        return $this->hasOne('App\User');
     }
 }

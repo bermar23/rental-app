@@ -48,4 +48,12 @@ class User extends Authenticatable
     ];
 
     protected $primaryKey = "user_id";
+
+    /**
+     * Get the transactions for user.
+     */
+    public function transactions()
+    {
+        return $this->hasMany('App\Transaction');
+    }
 }

@@ -28,13 +28,15 @@ class InvoiceItem extends Model
         'invoice_date' => 'datetime',
     ];
 
-    protected $primaryKey = "invoice_id";
+    protected $primaryKey = "invoice_item_id";
 
-    /**
-     * Get the images for the for the item.
-     */
-    public function images()
+    public function transaction()
     {
-        return $this->hasMany('App\ItemImage');
+        return $this->belongsTo('App\Transaction');
+    }
+    
+    public function item()
+    {
+        return $this->hasOne('App\Item');
     }
 }

@@ -14,8 +14,12 @@ class CreateInvoicesTable extends Migration
     public function up()
     {
         Schema::create('invoices', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->bigIncrements('invoice_item_id');            
+            $table->string('status');
+            $table->string('invoice_number');
+            $table->dateTime('invoice_date');
+            $table->foreign('invoice_id')->references('invoice_id')->on('invoices');
+            $$table->timestamps();
         });
     }
 
