@@ -17,9 +17,12 @@ class CreateItemImagesTable extends Migration
             $table->bigIncrements('item_image_id');
             $table->string('url');
             $table->string('image_name');    
-            $table->integer('item_id')->unsigned();
-            $table->foreign('item_id')->references('item_id')->on('items');
             $table->timestamps();
+        });
+
+        Schema::table('item_images', function($table) { 
+            $table->bigInteger('item_id')->unsigned()->index(); 
+            $table->foreign('item_id')->references('item_id')->on('items'); 
         });
     }
 
@@ -30,6 +33,10 @@ class CreateItemImagesTable extends Migration
      */
     public function down()
     {
+        Schema::table('item_images', function (Blueprint $table) {
+            $table->dropForeign('item_images_item_id_foreign');
+        });
+
         Schema::dropIfExists('item_images');
     }
 }

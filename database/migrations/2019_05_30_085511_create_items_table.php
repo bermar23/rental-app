@@ -22,10 +22,13 @@ class CreateItemsTable extends Migration
             $table->text('description');
             $table->text('terms_and_conditions');
             $table->text('html_description');
-            $table->decimal('rental_price', 8, 2);            
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('user_id')->on('users');
-            $table->timestamps();
+            $table->decimal('rental_price', 8, 2);         
+            $table->timestamps();   
+        });
+
+        Schema::table('items', function($table) { 
+            $table->bigInteger('user_id')->unsigned()->index(); 
+            $table->foreign('user_id')->references('user_id')->on('users'); 
         });
     }
 
@@ -36,6 +39,10 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
+        Schema::table('items', function (Blueprint $table) {
+            $table->dropForeign('items_user_id_foreign');
+        });
+        
         Schema::dropIfExists('items');
     }
 }

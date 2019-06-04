@@ -18,9 +18,12 @@ class CreateInvoicesTable extends Migration
             $table->string('status');
             $table->string('invoice_number');
             $table->dateTime('invoice_date');
-            $table->integer('trasaction_id')->unsigned();
-            $table->foreign('trasaction_id')->references('trasaction_id')->on('transactions');
-            $$table->timestamps();
+            $table->timestamps();
+        });
+
+        Schema::table('invoices', function($table) { 
+            $table->bigInteger('transaction_id')->unsigned()->index(); 
+            $table->foreign('transaction_id')->references('transaction_id')->on('transactions'); 
         });
     }
 
@@ -31,6 +34,10 @@ class CreateInvoicesTable extends Migration
      */
     public function down()
     {
+        Schema::table('invoices', function (Blueprint $table) {
+            $table->dropForeign('invoices_transaction_id_foreign');
+        });
+
         Schema::dropIfExists('invoices');
     }
 }

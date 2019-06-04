@@ -18,9 +18,12 @@ class CreateInvoiceItemsTable extends Migration
             $table->decimal('unit_price', 8, 2);
             $table->integer('quantity');
             $table->string('item_code');
-            $table->integer('item_id')->unsigned();
-            $table->foreign('transaction_id')->references('transaction_id')->on('transactions');
             $table->timestamps();
+        });
+
+        Schema::table('invoice_items', function($table) { 
+            $table->bigInteger('item_id')->unsigned()->index(); 
+            $table->foreign('item_id')->references('item_id')->on('items');  
         });
     }
 
@@ -31,6 +34,10 @@ class CreateInvoiceItemsTable extends Migration
      */
     public function down()
     {
+        Schema::table('invoice_items', function (Blueprint $table) {
+            $table->dropForeign('invoice_items_item_id_foreign');
+        });
+
         Schema::dropIfExists('invoice_items');
     }
 }
