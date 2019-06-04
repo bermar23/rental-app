@@ -22,7 +22,8 @@ class CreateItemsTable extends Migration
             $table->text('description');
             $table->text('terms_and_conditions');
             $table->text('html_description');
-            $table->decimal('amount', 8, 2);
+            $table->decimal('rental_price', 8, 2);            
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->timestamps();
         });

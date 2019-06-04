@@ -31,6 +31,8 @@ class CreateTransactionsTable extends Migration
             $table->text('shipped_to_postal_code');
             $table->text('shipped_to_tracking_number');
             $table->text('shipped_remarks');
+            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->foreign('shipper_id')->references('shipper_id')->on('shippers');
             $table->timestamps();
         });
     }

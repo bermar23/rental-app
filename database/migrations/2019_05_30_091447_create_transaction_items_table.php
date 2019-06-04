@@ -17,6 +17,8 @@ class CreateTransactionItemsTable extends Migration
             $table->bigIncrements('transaction_item_id');
             $table->decimal('amount', 8, 2);
             $table->string('item_code');
+            $table->integer('trasaction_id')->unsigned();
+            $table->integer('item_id')->unsigned();
             $table->foreign('transaction_id')->references('transaction_id')->on('transactions');
             $table->foreign('item_id')->references('item_id')->on('items');
             $table->timestamps();

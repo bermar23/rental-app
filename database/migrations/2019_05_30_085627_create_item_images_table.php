@@ -16,7 +16,8 @@ class CreateItemImagesTable extends Migration
         Schema::create('item_images', function (Blueprint $table) {
             $table->bigIncrements('item_image_id');
             $table->string('url');
-            $table->string('image_name');
+            $table->string('image_name');    
+            $table->integer('item_id')->unsigned();
             $table->foreign('item_id')->references('item_id')->on('items');
             $table->timestamps();
         });

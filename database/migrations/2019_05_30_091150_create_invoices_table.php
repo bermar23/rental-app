@@ -14,11 +14,12 @@ class CreateInvoicesTable extends Migration
     public function up()
     {
         Schema::create('invoices', function (Blueprint $table) {
-            $table->bigIncrements('invoice_item_id');            
+            $table->bigIncrements('invoice_id');            
             $table->string('status');
             $table->string('invoice_number');
             $table->dateTime('invoice_date');
-            $table->foreign('invoice_id')->references('invoice_id')->on('invoices');
+            $table->integer('trasaction_id')->unsigned();
+            $table->foreign('trasaction_id')->references('trasaction_id')->on('transactions');
             $$table->timestamps();
         });
     }
